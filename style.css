@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#color
+{
+    padding: 20px; 
+    display: flex;
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+    left: 40%;
+    top: 40%;
+    box-shadow: rgba(0,0,0, 0.7),-20px,20px;
+}
+#background
+{
+    width: 100vw;
+
+    height: 100vh;
+    background-color: blue;
+   
+}
+#table{
+    left: 0px;
+    cursor: pointer;
+    text-align: center;
+    
+}
+#table tr th{
+    padding: 15px;
+
+}
+#login{
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+form{
+    width: max-content;
+    padding: 20px;
+    margin:0 auto;
+    box-shadow:20px 20px 50px 15px black;
+    z-index: 1000;
+
+}
+#login form table th,td {
+    padding: 20px;
+}
+#Signup
+{
+    display: none;
+}
+#page
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+
