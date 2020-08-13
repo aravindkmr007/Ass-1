@@ -35,10 +35,11 @@ function SignUp()
 function signup()
 {
     //Storing Data
-    var username = {username: document.getElementById("username").value};
-    var password = { password : document.getElementById("pass").value};
+    var username = {username: document.getElementById("username").value,
+    password : document.getElementById("pass").value};
+    var userpass = {};
     var user = JSON.stringify(username.username);
-    var pass = JSON.stringify(password.password);
+    var pass = JSON.stringify(username.password);
     localStorage.setItem("username",user);
     localStorage.setItem("password",pass);
     console.log(user + " " + pass);
