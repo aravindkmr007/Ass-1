@@ -6,15 +6,48 @@ function color1()
     var display = document.getElementById("background");
     display.style.backgroundColor = "rgb(" + x + ","+ y + ","+z+")";    
 }
+function colorchange()
+{
+    var color =  document.getElementById("table");
+    if (color.style.display == "none" || color.style.display == "" )
+    {
+        color.style.display = "block";
+    }
+    else
+    {
+        color.style.display = "none";  
+    }
+  
+    
+}
 
 function color()
 {
     var x= document.getElementById("red").value;
     var y= document.getElementById("green").value;
     var z= document.getElementById("blue").value;
+    var o = document.getElementById("Opacity").value; 
     var display = document.getElementById("background");
-    display.style.backgroundColor = "rgb(" + x + ","+ y + ","+z+")";    
+    display.style.backgroundColor = "rgba(" + x + ","+ y + ","+z+","+ o +")";    
 }
+function changeBackground(){
+    var file = document.getElementById("image").files[0];
+    var imagefile = file.type;
+    var match= ["image/jpeg","image/png","image/jpg"];
+          if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2])))
+          {
+                alert("Invalid File Extension");
+          }
+          else{
+                var reader = new FileReader();
+                reader.onload = imageIsLoaded;
+                reader.readAsDataURL(document.getElementById("image").files[0]);
+          }
+    function imageIsLoaded(e) {
+          $('body').css({ 'background-image': "url(" + e.target.result + ")" });
+   
+          }     
+    }
 //login form
 
 function SignIn()

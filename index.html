@@ -5,46 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aravind</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
-<body>
+<body>  
+    <div id="background" >
+        <div id="back" class="mb-0" >
+            <table id="table"  onmousedown="color()">
+                <tr>
+                    <th>Red</th>
+                    <td><input type="range" min="0" max="255" step="1" id="red" onchange="color()" ></td>
+                </tr>
+                <tr>
+                    <th>Green</th>
+                    <td><input type="range" min="0" max="255" step="1" id="green" onchange="color()" ></td>
+                </tr>
+                <tr>
+                    <th>Blue</th>
+                    <td><input type="range" min="0" max="255" step="1" id="blue" onchange="color()" ></td>
+                </tr>
+                <tr>
+                    <th>Opacity</th>
+                    <td><input type="range" min="0.1" max="0.9" step="0.1" id="Opacity" onchange="color()" ></td>
+                </tr>
+                <tr>
+                    <th>BackGround Image</th>
+                    <td><input type="file" class="btn btn-primary" onchange="changeBackground()"  name="Add Image" id="image"></td>
+                </tr>
+
+            </table>
+            <input type="button" value="Change of Background Color and Image" onclick="colorchange()" class="btn btn-success">
+        </div>
     
-    <div id="background">
-        <table id="table" onmousedown="table()">
-            <tr>
-                <th>Red</th>
-                <td><input type="range" min="0" max="255" step="1" id="red" onchange="color()" ></td>
-            </tr>
-            <tr>
-                <th>Green</th>
-                <td><input type="range" min="0" max="255" step="1" id="green" onchange="color()" ></td>
-            </tr>
-            <tr>
-                <th>Blue</th>
-                <td><input type="range" min="0" max="255" step="1" id="blue" onchange="color()" ></td>
-            </tr>
-        </table>
-        <div id="login">
-            <form action="login">
-                <div id="page">
-                <input type="button" value="SignIn" id="btnsn"  onclick="SignIn()">
-                <input type="button" value="SignUp" id="btnsp" onclick="SignUp()">
+        <div id="login" >
+            <form action="login" class="mx-auto mt-4" >
+                <div id="page" >
+                <input type="button" class="btn btn-primary" value="SignIn" id="btnsn"  onclick="SignIn()">
+                <input type="button" class="btn btn-primary" value="SignUp" id="btnsp" onclick="SignUp()">
                 </div>
 
                 <table id="SignIn">
                     <tr >
-                        <th colspan="2">Login</th> 
+                        <th colspan="2" class="text-center">Login</th> 
                         
                     </tr>
                     <tr>
                         <th>Username</th>
-                        <td><input type="text" id="user" placeholder="Enter the Username"></td>
+                        <td><input type="text" id="user" class="rounded-right rounded-left" placeholder="Enter the Username"></td>
                     </tr>
                     <tr>
                         <th>Password</th>
-                        <td><input type="password" id="password" placeholder="Enter the Username"></td>
+                        <td><input type="password" id="password" class="rounded-right rounded-left" placeholder="Enter the Password"></td>
                     </tr>
                     <tr>
-                       <th colspan="2"><input type="button" value="Submit" onclick="login()" ></th> 
+                        <th colspan="2" class="text-center"><input type="button" class="btn btn-success" value="Submit" onclick="login()" ></th> 
                     </tr>
                     <tr>
                         <th colspan="2"><span id="loginsu"></span></th>
@@ -52,32 +65,36 @@
                 </table>
                 <table id="Signup">
                     <tr >
-                        <th colspan="2">SignUp</th> 
+                        <th colspan="2" class="text-center">SignUp</th> 
                         
                     </tr>
                     <tr>
                         <th>Username</th>
-                        <td><input type="text" id="username" placeholder="Enter the Username"></td>
+                        <td><input type="text" id="username" class="rounded-right rounded-left" placeholder="Enter the Username"></td>
                     </tr>
                     <tr>
                         <th>Password</th>
-                        <td><input type="password" id="pass" placeholder="Enter the Username"></td>
+                        <td><input type="password" id="pass" class="rounded-right rounded-left" placeholder="Enter the Password"></td>
                     </tr>
                     <tr>
-                       <th colspan="2"><input type="button" value="Submit" onclick="signup()" ></th> 
+                        <th colspan="2" class="text-center"><input type="button" class="btn btn-success " value="Submit" onclick="signup()" ></th> 
                     </tr>
                     <tr>
                         <th colspan="2"><span id="signup_msg"></span></th>
                     </tr>
                 </table>
-               
+                
         
-    
+
             </form>
-    
+
         </div>
     </div>
+    
     <script src="script.js"></script>
     <script src="store.json"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
