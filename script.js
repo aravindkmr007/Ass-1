@@ -58,8 +58,14 @@ function login()
             break;
 
         }
-        else{
+        else if (a[0] == user_pass[i][0] || a[1] == user_pass[i][1]  )
+        {
             document.getElementById("loginsu").innerHTML = "Enter the correct username and password";
+            break;
+        }
+        else (a[0] != user_pass[i][0] || a[1] != user_pass[i][1]  )
+        {
+            document.getElementById("loginsu").innerHTML = "You want to Signup";
         }
 
     }
