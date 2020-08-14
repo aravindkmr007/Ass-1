@@ -32,30 +32,37 @@ function SignUp()
     z.style.display = "none";
     y.style.display = "grid";   
 }
+var user_pass = [] ;
 function signup()
 {
     //Storing Data
-    var username = {username: document.getElementById("username").value,
-    password : document.getElementById("pass").value};
-    var userpass = {};
-    var user = JSON.stringify(username.username);
-    var pass = JSON.stringify(username.password);
-    localStorage.setItem("username",user);
-    localStorage.setItem("password",pass);
-    console.log(user + " " + pass);
+    var userpass = [(document.getElementById("username").value),
+    (document.getElementById("pass").value)];
+    localStorage.setItem(user_pass.push(userpass),userpass);
+    document.getElementById("signup_msg").innerHTML = "Your are Sussesfully Sign UP";
 }
+
 function login()
 {
     var x = document.getElementById("user").value;
     var y = document.getElementById("password").value;
-    var username = JSON.parse(localStorage.getItem("username"));
-    var password = JSON.parse(localStorage.getItem("password"));
-    if(x == username && y == password )
+    a=[];
+    a.push(x);
+    a.push(y);
+    console.log(typeof(a[0]));
+    for (i=0;(i<user_pass.length);i++)
     {
-        document.getElementById("loginsu").innerHTML = "Your are Successfully Login";
+        if(a[0] == user_pass[i][0] && a[1] == user_pass[i][1]  )
+        {
+            document.getElementById("loginsu").innerHTML = "Your are Successfully Login";
+            break;
+
+        }
+        else{
+            document.getElementById("loginsu").innerHTML = "Enter the correct username and password";
+        }
 
     }
-    else{
-        document.getElementById("loginsu").innerHTML = "Enter the correct username and password";
-    }
+    
+    
 }
