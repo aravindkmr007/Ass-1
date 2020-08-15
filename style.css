@@ -14,11 +14,11 @@
 #background
 {  
     width: 100vw;
-    height: 100vh;
+    height: max-content;
    
 }
 #back{
-    position: absolute;
+
 }
 
 #table{
