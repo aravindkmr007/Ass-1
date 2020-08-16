@@ -52,5 +52,30 @@ form{
     justify-content: space-evenly;
 
 }
+/* for welcome page of user */
+#Analog_Clock
+{
+    width: 100vw;
+    height: 100vh;
+}
+#clock-canvas
+{
+    border-radius: 50%;
+    box-shadow: 20px 20px 50px 15px black ;
+    margin-left: 400px;
+}
+#Digital_Clock{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+#Digi_Clock{
+    position: relative;
+    padding: 20px;
+    top: 50%;
+    font: bolder;
+    font-size: 30px;
+    justify-content: center;
+}
 
 

@@ -31,13 +31,12 @@
                     <th>BackGround Image</th>
                     <td><input type="file" class="btn btn-primary" onchange="changeBackground()"  name="Add Image" id="image"></td>
                 </tr>
-
             </table>
             <input type="button" value="Change of Background Color and Image" onclick="colorchange()" class="btn btn-success">
         </div>
     
         <div id="login" >
-            <form action="login" class="mx-auto mt-4" >
+            <form id="form" method="get" class="mx-auto mt-4" >
                 <div id="page" >
                 <input type="button" class="btn btn-primary" value="SignIn" id="btnsn"  onclick="SignIn()">
                 <input type="button" class="btn btn-primary" value="SignUp" id="btnsp" onclick="SignUp()">
@@ -60,7 +59,7 @@
                         <th colspan="2" class="text-center"><input type="button" class="btn btn-success" value="Submit" onclick="login()" ></th> 
                     </tr>
                     <tr>
-                        <th colspan="2"><span id="loginsu"></span></th>
+                        <th colspan="2"><span id="loginsu" class="text-center"></span></th>
                     </tr>
                 </table>
                 <table id="Signup">
@@ -80,7 +79,7 @@
                         <th colspan="2" class="text-center"><input type="button" class="btn btn-success " value="Submit" onclick="signup()" ></th> 
                     </tr>
                     <tr>
-                        <th colspan="2"><span id="signup_msg"></span></th>
+                        <th colspan="2"><span id="signup_msg" class="text-center"></span></th>
                     </tr>
                 </table>
                 

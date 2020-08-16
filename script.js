@@ -16,9 +16,7 @@ function colorchange()
     else
     {
         color.style.display = "none";  
-    }
-  
-    
+    }   
 }
 
 function color()
@@ -44,7 +42,8 @@ function changeBackground(){
                 reader.readAsDataURL(document.getElementById("image").files[0]);
           }
     function imageIsLoaded(e) {
-          $('body').css({ 'background-image': "url(" + e.target.result + ")" });
+          $('body').css({ 'background-image': "url(" + e.target.result + ")" ,
+                            'background-size' : 'cover' });
    
           }     
     }
@@ -87,7 +86,8 @@ function login()
     {
         if(a[0] == user_pass[i][0] && a[1] == user_pass[i][1]  )
         {
-            document.getElementById("loginsu").innerHTML = "Your are Successfully Login";
+            window.location = "welcome.html";
+
             break;
 
         }
@@ -101,7 +101,5 @@ function login()
             document.getElementById("loginsu").innerHTML = "You want to Signup";
         }
 
-    }
-    
-    
+    } 
 }

@@ -1,11 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Welcome </title>
+  </head>
+  <body id="body"> 
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+          <a class="navbar-brand">Welcome User</a>
+          <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="my-nav" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#Analog_Clock">Analog Clock</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#Digital_Clock">Digital Clock</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Photo Gallery</a>
+                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">E-mail Text editor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reminder List</a>
+                    </li>
+                    <li class="nav-item">
+                        <input type="button" class="btn btn-warning" onclick="logout()" value="Log Out">
+                    </li>
+              </ul>
+          </div>
+      </nav>
+      <div id="back" class=" fixed-bottom" >
+            
+        <table id="table"  onmousedown="color()">
+            <tr>
+                <th>Red</th>
+                <td><input type="range" min="0" max="255" step="1" id="red" onchange="color()" ></td>
+            </tr>
+            <tr>
+                <th>Green</th>
+                <td><input type="range" min="0" max="255" step="1" id="green" onchange="color()" ></td>
+            </tr>
+            <tr>
+                <th>Blue</th>
+                <td><input type="range" min="0" max="255" step="1" id="blue" onchange="color()" ></td>
+            </tr>
+            <tr>
+                <th>Opacity</th>
+                <td><input type="range" min="0.1" max="0.9" step="0.1" id="Opacity" onchange="color()" ></td>
+            </tr>
+            <tr>
+                <th>BackGround Image</th>
+                <td><input type="file" class="btn btn-primary" onchange="changeBackground()"  name="Add Image" id="image"></td>
+            </tr>
+
+        </table>
+        <input type="button" value="Change of Background Color and Image" onclick="colorchange()" class="btn btn-success">
     
-</body>
+     
+    </div>
+    <div id="Analog_Clock">
+        <canvas id="clock-canvas"  width="450" height="450">
+        </canvas>
+
+    </section>
+    
+    </div>
+    <div id="Digital_Clock">
+        <section id="Digi_Clock" class="d-flex ">
+            <div class="card">
+                <div class="card-body ">
+                    <h1 class="card-title text-center" id="hour"></h1>
+                    <hr>
+                    <p class="card-text text-center">Hour</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body ">
+                    <h1 class="card-title text-center" id="minute"></h1>
+                    <hr>
+                    <p class="card-text text-center">Minute</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body ">
+                    <h1 class="card-title text-center" id="Second"></h1>
+                    <hr>
+                    <p class="card-text text-center">Second</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body " >
+                    <h1 class="card-title text-center" id="Day"></h1>
+                    <hr>
+                    <p class="card-text text-center">Day</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scriptforWelcome.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
 </html>
