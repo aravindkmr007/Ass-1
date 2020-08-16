@@ -62,7 +62,10 @@ form{
 {
     border-radius: 50%;
     box-shadow: 20px 20px 50px 15px black ;
-    margin-left: 400px;
+    margin:4rem 30rem;
+    width: 20rem;
+    height: 20rem;
+
 }
 #Digital_Clock{
     position: relative;
@@ -81,5 +84,15 @@ form{
 {
     box-shadow: 20px 20px 50px 15px black ; 
     margin-left: 2rem;
+}
+#Text_Edit
+{
+    width: 100vw;
+    height: 100vh;
+}
+#text{
+    position: relative;
+    left: 30%;
+    top: 30%;
 }
 

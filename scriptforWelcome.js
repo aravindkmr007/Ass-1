@@ -55,7 +55,7 @@ function drawNumbers(graphic, radius) {
 var angle;
 var number;
 graphic.font = radius*0.15 + "px arial";
-graphic.color = "black";
+graphic.color = "white";
 graphic.textBaseline="middle";
 graphic.textAlign="center";
 for(number = 1; number < 13; number++)
