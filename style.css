@@ -71,11 +71,15 @@ form{
 }
 #Digi_Clock{
     position: relative;
-    padding: 20px;
     top: 50%;
     font: bolder;
     font-size: 30px;
     justify-content: center;
-}
 
+}
+.card
+{
+    box-shadow: 20px 20px 50px 15px black ; 
+    margin-left: 2rem;
+}
 
