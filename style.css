@@ -87,12 +87,31 @@ form{
 }
 #Text_Edit
 {
+    position: relative;
     width: 100vw;
     height: 100vh;
 }
 #text{
+    position: absolute;
+    left: 35%;
+    top: 40%;
+}
+#editor
+{
     position: relative;
-    left: 30%;
-    top: 30%;
+    top: 35%;
+}
+#editor button {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    padding-bottom: 4px;
+    cursor: pointer;
+}
+#reminder
+{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
 }
 

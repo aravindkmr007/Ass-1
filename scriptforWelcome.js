@@ -128,3 +128,61 @@ function digital_clock()
     setTimeout(digital_clock,1000);
 }
 digital_clock();
+function text_Center()
+{
+    var text = document.getElementById("text");
+    text.style.textAlign = "center";
+}
+function text_justify()
+{
+    var text = document.getElementById("text");
+    text.style.textAlign = "justify";
+}
+function text_left()
+{
+    var text = document.getElementById("text");
+    text.style.textAlign = "left";
+}
+function text_right()
+{
+    var text = document.getElementById("text");
+    text.style.textAlign = "right";
+}
+function bold()
+{
+    var text = document.getElementById("text");
+    text.style.fontWeight = "bold";
+}
+function text_height()
+{
+    var text = document.getElementById("text");
+    size = text.style.fontSize;
+    size = "3px";
+    text.style.fontSize = size++ ;
+}
+var id = 1;
+function add()
+{
+    var addtion_text = document.getElementById("input1").value;
+    var text1 = document.createElement("div");
+    var clas = document.createAttribute("class");
+    clas.value = "reminder";
+    text1.innerHTML = addtion_text;
+    document.getElementById("remind").appendChild(text1);
+    var edit =  document.createElement("input");
+    edit.type = "button";
+    edit.className = "btn btn-warning";
+    edit.value = "Edit";
+    console.log(edit);
+    
+    var del =  document.createElement("input");
+    del.type = "button";
+    del.className = "btn btn-danger";
+    del.value = "Delete";
+    
+    console.log(del);
+    text1.id = id;
+    document.getElementById(id).appendChild(edit);
+    document.getElementById(id).appendChild(del);
+    id++; 
+}

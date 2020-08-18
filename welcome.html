@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Welcome </title>
   </head>
   <body id="body"> 
@@ -28,7 +29,7 @@
                         <a class="nav-link" href="#Text_Edit">E-mail Text editor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Reminder List</a>
+                        <a class="nav-link" href="#reminder">Reminder List</a>
                     </li>
                     <li class="nav-item">
                         <input type="button" class="btn btn-warning" onclick="logout()" value="Log Out">
@@ -55,13 +56,8 @@
                 <th>Opacity</th>
                 <td><input type="range" min="0.1" max="0.9" step="0.1" id="Opacity" onchange="color()" ></td>
             </tr>
-            <tr>
-                <th>BackGround Image</th>
-                <td><input type="file" class="btn btn-primary" onchange="changeBackground()"  name="Add Image" id="image"></td>
-            </tr>
 
         </table>
-        <input type="button" value="Change of Background Color and Image" onclick="colorchange()" class="btn btn-success">
     
      
     </div>
@@ -106,8 +102,31 @@
 
     </div>
     <div id="Text_Edit">
-        <textarea name="Text-Edit" id="text" cols="50" rows="10"></textarea>
+        
+        <div class="d-flex justify-content-center" id="editor">
+            <button class="btn btn-primary" onclick="text_Center()"><i class="fa fa-align-center"  ></i></button>
+            <button class="btn btn-primary" onclick="text_justify()"><i class="fa fa-align-justify" ></i></button>
+            <button class="btn btn-primary" onclick="text_left()"><i class="fa fa-align-left"  ></i></button>
+            <button class="btn btn-primary" onclick="text_right()"><i class="fa fa-align-right"  ></i></button>
+            <button class="btn btn-primary" onclick="bold()"><i class="fa fa-bold"  ></i></button>
+            <button class="btn btn-primary" onclick="text_height()"><i class="fa fa-font" ></i></button>
+            <button class="btn btn-primary"><i class="fa fa-text-height" ></i></button>
+            <button class="btn btn-primary"><i class="fa fa-underline" ></i></button>
+        </div>
+        
 
+        <textarea name="Text-Edit" id="text" cols="50" rows="10"></textarea> 
+
+
+    </div> 
+    <div id="reminder">
+        <section id="remind">
+            
+            Add Reminder : <br>
+            <input type="search" id="input1" class="form-control"  required="required">
+            <input type="button" class="btn btn-success" value="Add" onclick="add()">
+            
+        </section>
 
     </div>
     
