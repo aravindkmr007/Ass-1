@@ -174,7 +174,6 @@ function add()
     edit.className = "btn btn-warning";
     edit.value = "Edit";
     console.log(edit);
-    
     var del =  document.createElement("input");
     del.type = "button";
     del.className = "btn btn-danger";
