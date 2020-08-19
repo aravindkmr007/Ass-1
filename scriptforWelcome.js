@@ -17,10 +17,10 @@ function colorchange()
 }
 function color()
 {
-    var x= document.getElementById("red").value;
-    var y= document.getElementById("green").value;
-    var z= document.getElementById("blue").value;
-    var o = document.getElementById("Opacity").value; 
+    var x= document.getElementById("reds").value;
+    var y= document.getElementById("greens").value;
+    var z= document.getElementById("blues").value;
+    var o = document.getElementById("Opacitys").value; 
     var display = document.getElementById("body");
     display.style.backgroundColor = "rgba(" + x + ","+ y + ","+z+","+ o +")";    
 }
@@ -160,28 +160,103 @@ function text_height()
     size = "3px";
     text.style.fontSize = size++ ;
 }
-var id = 1;
-function add()
-{
-    var addtion_text = document.getElementById("input1").value;
-    var text1 = document.createElement("div");
-    var clas = document.createAttribute("class");
-    clas.value = "reminder";
-    text1.innerHTML = addtion_text;
-    document.getElementById("remind").appendChild(text1);
-    var edit =  document.createElement("input");
-    edit.type = "button";
-    edit.className = "btn btn-warning";
-    edit.value = "Edit";
-    console.log(edit);
-    var del =  document.createElement("input");
-    del.type = "button";
-    del.className = "btn btn-danger";
-    del.value = "Delete";
-    
-    console.log(del);
-    text1.id = id;
-    document.getElementById(id).appendChild(edit);
-    document.getElementById(id).appendChild(del);
-    id++; 
+//reminder
+const container = document.querySelector('.container');
+var inputValue = document.querySelector('.input');
+const add = document.querySelector('.add');
+
+if(window.localStorage.getItem("todos") == undefined){
+     var todos = [];
+     window.localStorage.setItem("todos", JSON.stringify(todos));
 }
+
+var todosEX = window.localStorage.getItem("todos");
+var todos = JSON.parse(todosEX);
+
+
+class item{
+	constructor(name){
+		this.createItem(name);
+	}
+    createItem(name){
+    	var itemBox = document.createElement('div');
+        itemBox.classList.add('item');
+
+    	var input = document.createElement('input');
+    	input.type = "text";
+    	input.disabled = true;
+    	input.value = name;
+        input.classList.add('item_input');
+
+        var Done = document.createElement('button');
+    	Done.classList.add('edit','btn','btn-success');
+    	Done.innerHTML = "DONE";
+    	Done.addEventListener('click', () => this.Done(input));
+
+    	var edit = document.createElement('button');
+    	edit.classList.add('edit','btn','btn-warning');
+    	edit.innerHTML = "EDIT";
+    	edit.addEventListener('click', () => this.edit(input, name));
+
+    	var remove = document.createElement('button');
+    	remove.classList.add('remove','btn','btn-danger');
+    	remove.innerHTML = "REMOVE";
+    	remove.addEventListener('click', () => this.remove(itemBox, name));
+
+    	container.appendChild(itemBox);
+
+        itemBox.appendChild(input);
+        itemBox.appendChild(Done);
+        itemBox.appendChild(edit);
+        itemBox.appendChild(remove);
+
+    }
+    Done (input) {
+        input.disabled = true;
+    }
+
+    edit(input, name){
+        if(input.disabled == true){
+           input.disabled = !input.disabled;
+        }
+    	else{
+            input.disabled = !input.disabled;
+            let indexof = todos.indexOf(name);
+            todos[indexof] = input.value;
+            window.localStorage.setItem("todos", JSON.stringify(todos));
+        }
+    }
+
+    remove(itemBox, name){
+        itemBox.parentNode.removeChild(itemBox);
+        let index = todos.indexOf(name);
+        todos.splice(index, 1);
+        window.localStorage.setItem("todos", JSON.stringify(todos));
+    }
+}
+
+add.addEventListener('click', check);
+window.addEventListener('keydown', (e) => {
+	if(e.which == 13){
+		check();
+	}
+})
+
+function check(){
+	if(inputValue.value != ""){
+		new item(inputValue.value);
+        todos.push(inputValue.value);
+        window.localStorage.setItem("todos", JSON.stringify(todos));
+		inputValue.value = "";
+	}
+}
+
+
+for (var v = 0 ; v < todos.length ; v++){
+    new item(todos[v]);
+}
+
+
+ 
+
+

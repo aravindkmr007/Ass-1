@@ -37,24 +37,24 @@
               </ul>
           </div>
       </nav>
-      <div id="back" class="fixed-bottom" >
+      <div id="backs" class="fixed-bottom" >
             
         <table id="table"  onmousedown="color()">
             <tr>
                 <th>Red</th>
-                <td><input type="range" min="0" max="255" step="1" id="red" onchange="color()" ></td>
+                <td><input type="range" min="0" max="255" step="1" id="reds" onchange="color()" ></td>
             </tr>
             <tr>
                 <th>Green</th>
-                <td><input type="range" min="0" max="255" step="1" id="green" onchange="color()" ></td>
+                <td><input type="range" min="0" max="255" step="1" id="greens" onchange="color()" ></td>
             </tr>
             <tr>
                 <th>Blue</th>
-                <td><input type="range" min="0" max="255" step="1" id="blue" onchange="color()" ></td>
+                <td><input type="range" min="0" max="255" step="1" id="blues" onchange="color()" ></td>
             </tr>
             <tr>
                 <th>Opacity</th>
-                <td><input type="range" min="0.1" max="0.9" step="0.1" id="Opacity" onchange="color()" ></td>
+                <td><input type="range" min="0.1" max="0.9" step="0.1" id="Opacitys" onchange="color()" ></td>
             </tr>
 
         </table>
@@ -120,13 +120,16 @@
 
     </div> 
     <div id="reminder">
-        <section id="remind">
-            
-            Add Reminder : <br>
-            <input type="search" id="input1" class="form-control"  required="required">
-            <input type="button" class="btn btn-success" value="Add" onclick="add()">
-            
-        </section>
+        <div class="inputDiv">
+            <input type="text" class="input form-control" placeholder="What Do You Want to Do...">
+            <br>
+            <br>
+            <button class="add btn btn-primary" >Add</button>
+            <br>
+            <br>
+         </div>
+         <div class="container">
+         </div>
 
     </div>
     
